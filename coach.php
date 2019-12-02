@@ -22,11 +22,11 @@
   <div class="row">
       <div class="col-md-4 mask">
         <div class="card border shadow-lg p-3 mb-5 bg-white rounded" style="width: 18rem;">
-        <img src="<?php echo $coach['photo']?>" class="card-img-top" alt="les coachs">
+          <img src="<?php echo $coach['photo']?>"> <div class="card-img-top" alt="les coachs">
         </div>
       </div>
   </div>
 </div>
 
-
+<?php var_dump('coachs') ?>
 <?php include('include/footer.php'); ?>

@@ -10,10 +10,9 @@
 ?>
 
 <div class="container">
-  <div class="row">
+  <div class="row hidden-md-up">
     <?php foreach ($teams as $team)  { ?>
-
-      <div class="col-md-4 mask">
+      <div class="col-md-4">
         <div class="card border shadow-lg p-3 mb-5 bg-white rounded" style="width: 18rem;">
           <img src="<?php echo $team['logo']?>" class="card-img-top" alt="les équipes">
           <div class="card-body">
@@ -27,7 +26,7 @@
         </div>
       </div>
     <?php } ?>
+  </div>
 </div>
-
 
 <?php include('include/footer.php'); ?>

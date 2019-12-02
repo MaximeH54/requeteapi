@@ -29,4 +29,4 @@
 </div>
 
 <?php var var_dump(score_home);?>
-<?php include('include/footer.php'); ?>
+<?php include('include/footer.php'); ?>fdg 

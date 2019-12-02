@@ -29,18 +29,56 @@
     WHERE teams.id = ' . $id);
   $stmt->execute();
   $players = $stmt->fetchAll(PDO::FETCH_ASSOC);
-  ?>
 
-<div class="container">
+  $stmt = $db->prepare('SELECT matchs.*
+    FROM matchs
+    INNER JOIN teams AS th
+    ON team_home.id = matchs.id_team_home
+    INNER JOIN teams AS ta
+    ON ta.id = matchs.id_team_away
+    WHERE ta.id =  ' . $id);
+  $stmt->execute();
+  $matchs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
+<div class="container text-center">
+  <h1 class="font-weight-bold"><?= $team['name']; ?></h1>
   <div class="row">
-    <?= $team['name']; ?>
-    <a href="coach.php?id=<?php echo $team['coach_id']; ?>">
-      <?= $team['coach']; ?>
-    </a>
+    <img src="<?php echo $team['logo']?>" class="card-img-top rounded mx-auto d-block"style="width: 35rem;" alt="les équipes">
+    <table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">President : </th>
+      <th scope="col"><?php echo $team['president']; ?></th>
+    </tr>
+  </thead>
+  <thead>
+    <tr>
+      <th scope="col">Date de fondation : </th>
+      <th scope="col"><?php echo $team['fundation_date']; ?></th>
+    </tr>
+  </thead>
+  <thead>
+    <tr>
+      <th scope="col">Entraineur : </th>
+      <th scope="col"><a href="coach.php?id="><?php echo $team['coach']; ?></a></th>
+    </tr>
+  </thead>
+  <thead>
+    <tr>
+      <th scope="col">Stade : </th>
+      <th scope="col"><?php echo $team['name']?></th>
+    </tr>
+  </thead>
+</table>
   </div>
 </div>
 
 
-<?php var_dump($_GET['id']); ?>
+
+<style>
+</style>
+
+
 
 <?php include('include/footer.php'); ?>
