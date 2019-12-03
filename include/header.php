@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="./css/style.css">
   </head>
 <body>
+    <style>
+      body {
+        background-color: black;
+        }
+    </style>
   <!--Navbar-->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="./">Ligue 1</a>
@@ -18,7 +23,7 @@
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
         <a class="nav-link btn-dark m-2 text-white" href="./">EQUIPES</a>
-      </li>            
+      </li>
     </ul>
   </div>
   </nav>
